@@ -1,14 +1,14 @@
 import pyttsx3 
 import speech_recognition as sr
 import datetime
-import wikipedia #pip install wikipedia
+import wikipedia
 import webbrowser
 import os
 import smtplib
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-# print(voices[1].id)
+
 engine.setProperty('voice', voices[0].id)
 
 
@@ -61,10 +61,10 @@ def sendEmail(to, content):
 if __name__ == "__main__":
     wishMe()
     while True:
-    # if 1:
+   
         query = takeCommand().lower()
 
-        # Logic for executing tasks based on query
+       
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
@@ -99,14 +99,5 @@ if __name__ == "__main__":
             os.startfile(codePath)
       
                                                                                            
-#   elif 'email to Nafisa' in query:                                                   
-#       try:                                                                           
-#           speak("What should I say?")                                                
-#           content = takeCommand()                                                    
-#           to = "yourEmail@gmail.com"                                                 
-#           sendEmail(to, content)                                                     
-#           speak("Email has been sent!")                                              
-#       except Exception as e:                                                         
-#           print(e)                                                                   
-#           speak("Sorry my friend Nafisa. I am not able to send this email")          
+   
                                                                                      
